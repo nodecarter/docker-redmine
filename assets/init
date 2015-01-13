@@ -454,6 +454,7 @@ if [ -d ${DATA_DIR}/plugins ]; then
     rm -rf ${DATA_DIR}/tmp/plugin_assets/*
 
     echo "Installing gems required by plugins..."
+    rm Gemfile.lock
     bundle install --without development tests --path vendor/bundle
 
     echo "Migrating plugins. Please be patient, this could take a while..."
